@@ -14,6 +14,8 @@ python ess_compress.py decompress --help
 
 Using multiple threads does not impact compression quality. Using higher compression levels is recommended for archival, with the highest level (22) still being fast enough to be viable.
 
+Roughly preserves file timestamps (at second granularity)
+
 ## Results
 
 Testing on ~300 saves from Lost Legacy, ~30MB each, shows that it can achieve compression ratios below 10% with respect to original LZ4 compressed saves (default SSE saves), and below 3% for uncompressed saves. 
