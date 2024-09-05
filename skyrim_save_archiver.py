@@ -326,6 +326,13 @@ def cli_compress(args):
         if not child.name.startswith('Save'):
             continue
 
+        # only get saves that can actually be parsed
+        # SSSO3 for example start with "Save"
+        try:
+            get_save_id_from_path(child)
+        except:
+            continue
+
         ext = child.suffix
         if ext == '.ess':
             ess_files.append(child)
